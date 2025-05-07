@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 //annotation - 프로그램이 알아듣는 주석
 
@@ -37,9 +38,9 @@ public class User {
     @Column(name = "image_url")
     private String imageUrl;
 
-    //    @OneToMany(mappedBy = "user")
-//    private List<Post> posts;
-//
+    @OneToMany(mappedBy = "user") //유저하나당 포스트 여러개
+    private List<Post> posts;
+
 //    @OneToMany(mappedBy = "user")
 //    private List<Like> likes;
 //
